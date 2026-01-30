@@ -1,4 +1,4 @@
-# 🚀 NeuroScript: High-Precision Digit Classification from First Principles
+#  NeuroScript: High-Precision Digit Classification from First Principles
 **A Framework-Free Engineering Implementation | IIT Kanpur Aerospace Engineering Portfolio**
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
@@ -45,20 +45,20 @@ The model exhibits rapid, stable convergence. The **Loss Decay** plot showcases 
 
 ### **B. Feature Clustering (t-SNE)**
 This plot visualizes the "internal worldview" of the 512-neuron hidden layer. The clear, non-overlapping clusters prove the model has successfully learned distinct feature representations for each digit class.
-![t-SNE Clusters](images/tsne_clusters.png)
+![t-SNE Clusters](images/tsne_manifold.png)
 
 ### **C. Precision Audit (Confusion Matrix)**
 The confusion matrix verifies near-perfect identification across all classes, showing robustness against visually similar digits like '4' vs. '9'.
-![Confusion Matrix](images/confusion_matrix.png)
-
+![Confusion Matrix](images/final_matrix_perfect.png)
 ### **D. Weight Health**
-The histogram of trained weights confirms a healthy distribution centered at zero, proving that **He Initialization** maintained weight stability without saturation.
-![Weight Distribution](images/weight_distribution.png)
+histogram of trained weights confirms a healthy distribution centered at zero, proving that **He Initialization** maintained weight stability without saturation.
+![Weight Distribution](images/weight_histograms.png)
 
 ---
 
-## 🚀 4. Deployment & Production Logic
-The project includes a standalone **Streamlit Web Application** designed for real-world interaction.
+
+##  4. Deployment & Production Logic
+The project includes a standalone "Streamlit Web Application" designed for real-world interaction.
 
 
 
@@ -88,4 +88,5 @@ pip install -r deployment/requirements.txt
 
 # 3. Launch the dashboard
 cd deployment
+
 streamlit run app.py

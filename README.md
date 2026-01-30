@@ -1,4 +1,4 @@
-#  NeuroScript: High-Precision Digit Classification from First Principles
+# 🚀 NeuroScript: High-Precision Digit Classification from First Principles
 **A Framework-Free Engineering Implementation | IIT Kanpur Aerospace Engineering Portfolio**
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
@@ -50,15 +50,46 @@ This plot visualizes the "internal worldview" of the 512-neuron hidden layer. Th
 ### **C. Precision Audit (Confusion Matrix)**
 The confusion matrix verifies near-perfect identification across all classes, showing robustness against visually similar digits like '4' vs. '9'.
 ![Confusion Matrix](images/final_matrix_perfect.png)
+
 ### **D. Weight Health**
-histogram of trained weights confirms a healthy distribution centered at zero, proving that **He Initialization** maintained weight stability without saturation.
+ The histogram of trained weights confirms a healthy distribution centered at zero, proving that "He Initialization" maintained weight stability without saturation.
 ![Weight Distribution](images/weight_histograms.png)
+
+
+
 
 ---
 
+##  4. Results & Performance Analysis
 
-##  4. Deployment & Production Logic
-The project includes a standalone "Streamlit Web Application" designed for real-world interaction.
+### **A. Global Accuracy Metrics**
+After 40 epochs of training using a mini-batch size of 64, the model achieved the following results on the MNIST test set:
+* **Final Test Accuracy**: 98.38%
+* **Training Loss (Cross-Entropy)**: ~0.042
+* **Weight Stability**: Validated through **He Initialization**, ensuring stable gradient variance throughout the 512-neuron depth.
+
+### **B. High-Confidence Classifications**
+The model demonstrates exceptional generalization across diverse handwriting styles. Below is a grid showing consistent, high-confidence predictions on test samples:
+
+![High-Confidence Predictions](images/classification_success.png)
+
+
+
+### **C. Error Analysis (The "Edge Cases")**
+True engineering involves understanding failure modes. I performed a detailed error analysis on the remaining **1.62% of errors**. The discrepancy grid below reveals that misclassifications primarily occur on structurally ambiguous digits (e.g., '4' vs '9' or '3' vs '5').
+
+![Error Analysis Discrepancies](images/error_analysis_grid.png)
+
+### **D. High-Dimensional Clustering (t-SNE)**
+Visualized via t-SNE to prove the hidden layer successfully separates digit classes into distinct, linearly separable clusters in latent space.
+
+
+
+
+---
+
+##  5. Deployment & Production Logic
+The project includes a standalone **Streamlit Web Application** designed for real-world interaction.
 
 
 
@@ -66,21 +97,6 @@ The project includes a standalone "Streamlit Web Application" designed for real-
 * **Robust Preprocessing Agent**: Handles automated grayscaling, 28x28 resizing, and **smart background inversion** to ensure real-world drawings match the model's training standard.
 * **Modular Inference Class**: A standalone `MNISTDeployer` class that loads serialized `.npy` parameters, making the model lightweight and portable.
 * **Interactive UI**: Includes Lottie animations, technical spec popups, and a dual-tab interface for both casual use and scientific audit.
-
-
-
-
----
-
-##  5. Interactive Streamlit Web Application
-The engine is deployed via a high-performance **Streamlit** dashboard, providing a "playful" yet professional interface for recruiters to test the model's capabilities in real-time.
-
-### **Key Engineering Features:**
-* **Real-Time Inference**: Users can upload any handwritten digit image (PNG/JPG) for immediate classification.
-* **Smart Preprocessing Agent**: Includes an automated pipeline for **grayscaling**, **28x28 resizing**, and **smart background inversion** (correcting human "black-on-white" drawings to the MNIST "white-on-black" standard).
-* **Scientific Audit Tab**: A dedicated interface to view all performance metrics, confusion matrices, and error analysis plots directly within the app.
-* **Lottie-Powered UI**: Integrated interactive animations and custom CSS for a modern, responsive user experience.
-
 
 ---
 
@@ -90,6 +106,20 @@ The engine is deployed via a high-performance **Streamlit** dashboard, providing
 * 📁 **`deployment/`**: Production-ready `app.py`, `deploy_mnist.py`, and `requirements.txt`.
 * 📁 **`final_98_model/`**: Serialized optimized weights ($W_1, b_1, W_2, b_2$).
 * 📁 **`images/`**: High-resolution diagnostic plots for the README and App interface.
+
+
+
+
+---
+
+##  7. Interactive Streamlit Web Application
+The engine is deployed via a high-performance **Streamlit** dashboard, providing a "playful" yet professional interface for recruiters to test the model's capabilities in real-time.
+
+### **Key Engineering Features:**
+* **Real-Time Inference**: Users can upload any handwritten digit image (PNG/JPG) for immediate classification.
+* **Smart Preprocessing Agent**: Includes an automated pipeline for **grayscaling**, **28x28 resizing**, and **smart background inversion** (correcting human "black-on-white" drawings to the MNIST "white-on-black" standard).
+* **Scientific Audit Tab**: A dedicated interface to view all performance metrics, confusion matrices, and error analysis plots directly within the app.
+* **Lottie-Powered UI**: Integrated interactive animations and custom CSS for a modern, responsive user experience.
 
 ---
 
@@ -103,6 +133,4 @@ pip install -r deployment/requirements.txt
 
 # 3. Launch the dashboard
 cd deployment
-
 streamlit run app.py
-

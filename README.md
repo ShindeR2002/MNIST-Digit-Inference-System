@@ -22,6 +22,7 @@ The model is designed as a deep neural network focusing on high-dimensional feat
 * **Output Layer**: 10 neurons with **Softmax** activation to produce a stable probability distribution across digit classes (0-9).
 * **Weight Initialization (He Initialization)**: To solve the vanishing/exploding gradient problem, I implemented **He Initialization** ($Var(W) = \frac{2}{n_{in}}$), ensuring signal stability throughout the network depth.
 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/1ef62667-99d6-4c0c-84e4-406faed01eb7" />
 
 
 ---
@@ -115,14 +116,17 @@ The project includes a standalone **Streamlit Web Application** designed for rea
 ---
 
 ##  7. Interactive Streamlit Web Application
-The engine is deployed via a high-performance **Streamlit** dashboard, providing a "playful" yet professional interface for recruiters to test the model's capabilities in real-time.
 
+The engine is deployed via a high-performance Streamlit dashboard, providing a "playful" yet professional interface for recruiters to test the model's capabilities in real-time.
+Streamlit App - https://3sug9x5vc3irhqrzbtjren.streamlit.app/
+
+---
 ### **Key Engineering Features:**
 * **Real-Time Inference**: Users can upload any handwritten digit image (PNG/JPG) for immediate classification.
 * **Smart Preprocessing Agent**: Includes an automated pipeline for **grayscaling**, **28x28 resizing**, and **smart background inversion** (correcting human "black-on-white" drawings to the MNIST "white-on-black" standard).
 * **Scientific Audit Tab**: A dedicated interface to view all performance metrics, confusion matrices, and error analysis plots directly within the app.
 * **Lottie-Powered UI**: Integrated interactive animations and custom CSS for a modern, responsive user experience.
-Streamlit App - https://3sug9x5vc3irhqrzbtjren.streamlit.app/
+
 ---
 
 ##  Installation & Usage
@@ -136,5 +140,6 @@ pip install -r deployment/requirements.txt
 # 3. Launch the dashboard
 cd deployment
 streamlit run app.py
+
 
 

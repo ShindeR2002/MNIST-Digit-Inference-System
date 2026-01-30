@@ -4,3 +4,5 @@ Pillow
 scikit-learn
 matplotlib
 seaborn
+requests
+streamlit-lottie

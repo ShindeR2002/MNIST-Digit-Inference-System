@@ -120,7 +120,7 @@ The engine is deployed via a high-performance **Streamlit** dashboard, providing
 * **Smart Preprocessing Agent**: Includes an automated pipeline for **grayscaling**, **28x28 resizing**, and **smart background inversion** (correcting human "black-on-white" drawings to the MNIST "white-on-black" standard).
 * **Scientific Audit Tab**: A dedicated interface to view all performance metrics, confusion matrices, and error analysis plots directly within the app.
 * **Lottie-Powered UI**: Integrated interactive animations and custom CSS for a modern, responsive user experience.
-
+Streamlit App - https://3sug9x5vc3irhqrzbtjren.streamlit.app/
 ---
 
 ##  Installation & Usage
@@ -134,3 +134,4 @@ pip install -r deployment/requirements.txt
 # 3. Launch the dashboard
 cd deployment
 streamlit run app.py
+

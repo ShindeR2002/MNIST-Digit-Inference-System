@@ -1,9 +1,11 @@
 # 🚀 NeuroScript: High-Precision Digit Classification from First Principles
+
 **A Framework-Free Engineering Implementation | IIT Kanpur Aerospace Engineering Portfolio**
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
 [![NumPy Only](https://img.shields.io/badge/Library-NumPy%20Only-orange.svg)](https://numpy.org/)
 [![Accuracy](https://img.shields.io/badge/Accuracy-98.38%25-green.svg)](https://github.com/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://3sug9x5vc3irhqrzbtjren.streamlit.app/)
 
 
 
@@ -134,4 +136,5 @@ pip install -r deployment/requirements.txt
 # 3. Launch the dashboard
 cd deployment
 streamlit run app.py
+
 

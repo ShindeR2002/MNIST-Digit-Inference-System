@@ -67,9 +67,24 @@ The project includes a standalone "Streamlit Web Application" designed for real-
 * **Modular Inference Class**: A standalone `MNISTDeployer` class that loads serialized `.npy` parameters, making the model lightweight and portable.
 * **Interactive UI**: Includes Lottie animations, technical spec popups, and a dual-tab interface for both casual use and scientific audit.
 
+
+
+
 ---
 
-## 📁 5. Repository Structure
+##  5. Interactive Streamlit Web Application
+The engine is deployed via a high-performance **Streamlit** dashboard, providing a "playful" yet professional interface for recruiters to test the model's capabilities in real-time.
+
+### **Key Engineering Features:**
+* **Real-Time Inference**: Users can upload any handwritten digit image (PNG/JPG) for immediate classification.
+* **Smart Preprocessing Agent**: Includes an automated pipeline for **grayscaling**, **28x28 resizing**, and **smart background inversion** (correcting human "black-on-white" drawings to the MNIST "white-on-black" standard).
+* **Scientific Audit Tab**: A dedicated interface to view all performance metrics, confusion matrices, and error analysis plots directly within the app.
+* **Lottie-Powered UI**: Integrated interactive animations and custom CSS for a modern, responsive user experience.
+
+
+---
+
+## 📁 6. Repository Structure
 * 📁 **`core/`**: Object-oriented implementation of Dense layers, ReLU, Softmax, and ADAM logic.
 * 📁 **`analytics/`**: Scripts for t-SNE generation and performance plotting.
 * 📁 **`deployment/`**: Production-ready `app.py`, `deploy_mnist.py`, and `requirements.txt`.
@@ -90,3 +105,4 @@ pip install -r deployment/requirements.txt
 cd deployment
 
 streamlit run app.py
+
